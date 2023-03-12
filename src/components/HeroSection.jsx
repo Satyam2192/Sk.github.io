@@ -77,7 +77,7 @@ const Wrapper = styled.section`
     text-align: center;
   }
   .hero-img {
-    max-width: 80%;
+    max-width: 90%;
   }
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .grid {
