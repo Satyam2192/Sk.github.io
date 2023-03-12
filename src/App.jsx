@@ -51,12 +51,12 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/LogIn" element={<LogIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/FPassword" element={<FPassword />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/fpassword" element={<FPassword />} />
           <Route path="*" element={<Error />} />
         </Routes>
         {/* <Footer /> */}
