@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+// import { CgMenu, CgCloseR } from "react-icons/cg";
 
 const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
   const Nav = styled.nav`
     .navbar-list {
       display: flex;
@@ -97,21 +100,37 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <div className="menuIcon">
+      <div className={openMenu ? "menuIcon active" : "menuIcon"}>
         <ul className="navbar-list">
-          {/*   */}
           <li>
-            <NavLink className="navbar-link" to={"/about"}>
+            <NavLink
+              className="navbar-link"
+              onClick={() => setOpenMenu(false)}
+              to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="navbar-link"
+              onClick={() => setOpenMenu(false)}
+              to="/about">
               About
             </NavLink>
           </li>
           <li>
-            <NavLink className="navbar-link" to={"/services"}>
+            <NavLink
+              className="navbar-link"
+              onClick={() => setOpenMenu(false)}
+              to="/service">
               Services
             </NavLink>
           </li>
           <li>
-            <NavLink className="navbar-link" to={"/contact"}>
+            <NavLink
+              className="navbar-link"
+              onClick={() => setOpenMenu(false)}
+              to="/contact">
               Contact
             </NavLink>
           </li>

@@ -1,16 +1,19 @@
 import React from "react";
 import About from "./About";
+import Error from "./Error";
 import Contact from "./Contact";
 import Home from "./Home";
 import LogIn from "./Login/LogIn";
 import Services from "./Services";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import SignUp from "./Login/SignUp";
 import FPassword from "./Login/FPassword";
+import Footer from "./components/Footer";
+// import styled, { ThemeProvider } from "styled-components";
+
 
 const App = () => {
   const theme = {
@@ -21,8 +24,8 @@ const App = () => {
       black: " #212529",
       helper: "#8490ff",
       bg: "rgb(249 249 255)",
-      footer_bg: "#0a1435",
-      btn: "rgb(98 84 243)",
+      footer_bg: "#36454F",
+      btn: "#3CB371",
       border: "rgba(98, 84, 243, 0.5)",
       hr: "#ffffff",
       gradient:
@@ -54,7 +57,9 @@ const App = () => {
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/FPassword" element={<FPassword />} />
+          <Route path="*" element={<Error />} />
         </Routes>
+        {/* <Footer /> */}
         <Footer />
       </BrowserRouter>
     </ThemeProvider>

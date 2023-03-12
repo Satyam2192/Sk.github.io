@@ -1,141 +1,185 @@
 import React from "react";
 import styled from "styled-components";
-// import { Button } from "../styles/Button";
+import { Button } from "../styles/Button";
 import { NavLink } from "react-router-dom";
-// import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaTwitter, FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
 
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-} from "mdb-react-ui-kit";
-
-export default function Footer() {
+const Footer = () => {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
-      <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div className="me-5 d-none d-lg-block">
-          <span>Get connected with us on social networks:</span>
-        </div>
+    <Wrapper>
+      <section className="contact-short">
+        <div className="grid grid-two-column">
+          <div>
+            <h3>Don't wait for change to happen</h3>
+            <h3>Make it happen</h3>
+          </div>
 
-        <div>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="facebook-f" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="instagram" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="linkedin" />
-          </a>
-          <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="github" />
-          </a>
+          <div className="contact-short-btn">
+            <NavLink to="/">
+              <Button>Get started today</Button>
+            </NavLink>
+          </div>
         </div>
       </section>
 
-      <section className="">
-        <MDBContainer className="text-center text-md-start mt-5">
-          <MDBRow className="mt-3">
-            <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">
-                <MDBIcon icon="gem" className="me-3" />
-                Company name
-              </h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero
-                cumque velit, ullam porro odit? Error voluptas ipsum beatae,
-                perferendis blanditiis itaque inventore officiis provident
-                libero cupiditate ex eveniet! Quas!
-              </p>
-            </MDBCol>
+      {/* footer section  */}
 
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Angular
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  React
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Laravel
-                </a>
-              </p>
-            </MDBCol>
+      <footer>
+        <div className="container grid grid-four-column">
+          <div className="footer-about">
+            <h3>SK Earth Savers</h3>
+            <p>Earth Savers for a better tomorrow</p>
+          </div>
 
-            <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Pricing
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Settings
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Orders
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Help
-                </a>
-              </p>
-            </MDBCol>
+          {/* 2nd column */}
+          <div className="footer-subscribe">
+            <h3>Stay up to date on the fight against climate change</h3>
+            <form action="#">
+              <input
+                type="email"
+                required
+                autoComplete="off"
+                placeholder="Email"
+              />
+              <input type="submit" value="Subscribe" />
+            </form>
+          </div>
 
-            <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-              <p>
-                <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
-              </p>
-              <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
-              </p>
-              <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
-              </p>
-              <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
-              </p>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-      </section>
+          {/* 3rs column  */}
+          <div className="footer-social">
+            <h3>Follows Us On</h3>
+            <div className="footer-social--icons">
+              <div>
+                <FaTwitter className="icons" />
+              </div>
+              <div>
+                <FaDiscord className="icons" />
+              </div>
+              <div>
+                <FaInstagram className="icons" />
+              </div>
+              <div>
+                <a
+                  href="https://www.youtube.com/watch?v=Lq0iua0r0KQ"
+                  target="_blank"
+                >
+                  <FaYoutube className="icons" />
+                </a>
+              </div>
+            </div>
+          </div>
 
-      <div
-        className="text-center p-4"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-      >
-        © 2021 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-          MDBootstrap.com
-        </a>
-      </div>
-    </MDBFooter>
+          {/* 4th column  */}
+          <div className="footer-contact">
+            <h3>Call Us</h3>
+            <h3>+91 12345678978</h3>
+            <h3>info@skearthsavers.org </h3>
+            <h3>Our office is located at 123 Main St, Anytown, USA</h3>
+          </div>
+        </div>
+
+        {/* bottom section  */}
+        <div className="footer-bottom--section">
+          <hr />
+
+          <div className="container grid grid-four-column">
+            <div>
+              <p>
+                Read our privacy policy to learn how we protect your personal
+                information
+              </p>
+            </div>
+            <div>
+              <p>
+                The views expressed on this website are those of SK Earth Savers
+                and do not necessarily reflect those of any other organization
+                or institution
+              </p>
+            </div>
+
+            <div>
+              <p>
+                @{new Date().getFullYear()} ©Copyright SK Earth Savers. All
+                rights reserved
+              </p>
+            </div>
+
+            <div>
+              <p>By using our website, you agree to our terms and conditions</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </Wrapper>
   );
-}
+};
+
+const Wrapper = styled.section`
+  .contact-short {
+    max-width: 60vw;
+    margin: auto;
+    padding: 5rem 10rem;
+    background-color: ${({ theme }) => theme.colors.bg};
+    border-radius: 1rem;
+    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+    transform: translateY(50%);
+  }
+  .contact-short-btn {
+    justify-self: end;
+    align-self: center;
+  }
+  footer {
+    padding: 14rem 0 3rem 0;
+    background-color: ${({ theme }) => theme.colors.footer_bg};
+    h3 {
+      color: ${({ theme }) => theme.colors.hr};
+      margin-bottom: 2.1rem;
+    }
+    p {
+      color: ${({ theme }) => theme.colors.white};
+    }
+    .footer-social--icons {
+      display: flex;
+      gap: rem;
+      div {
+        padding: 1rem;
+        border-radius: 50%;
+        border: 2px solid ${({ theme }) => theme.colors.white};
+        .icons {
+          color: ${({ theme }) => theme.colors.white};
+          font-size: 2.4rem;
+          position: relative;
+          cursor: pointer;
+        }
+      }
+    }
+    .footer-bottom--section {
+      padding-top: 1rem;
+
+      hr {
+        margin-bottom: 1rem;
+        color: ${({ theme }) => theme.colors.hr};
+        height: 0.1px;
+      }
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .contact-short {
+      max-width: 95vw;
+      padding: 2rem 0rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .contact-short-btn {
+        text-align: center;
+        justify-self: flex-start;
+      }
+    }
+    footer .footer-bottom--section {
+      padding-top: 3.2rem;
+    }
+  }
+`;
+
+export default Footer;
