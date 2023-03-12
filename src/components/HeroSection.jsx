@@ -31,7 +31,7 @@ const HeroSection = () => {
         <div className="section-hero-image">
           <picture>
             <img
-              src="https://source.unsplash.com/1920x1920/?tsunami,Volcano"
+              src="https://source.unsplash.com/1920x1920/?Volcano"
               alt="hero image"
               className="hero-img "
             />
