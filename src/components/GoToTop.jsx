@@ -58,9 +58,9 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    &--icon {
-      animation: gototop 1.2s linear infinite alternate-reverse;
-    }
+    // &--icon {
+    //   animation: gototop 9s linear infinite alternate-reverse;
+    // }
     @keyframes gototop {
       0% {
         transform: translateY(-0.5rem);

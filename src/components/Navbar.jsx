@@ -1,7 +1,8 @@
+
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-// import { CgMenu, CgCloseR } from "react-icons/cg";
+import { CgMenu} from "react-icons/cg";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -81,8 +82,8 @@ const Navbar = () => {
         display: none;
         font-size: 4.2rem;
         position: absolute;
-        top: 3%;
-        right: 10%;
+        top: 3.6%;
+        right: 5.1%;
         color: ${({ theme }) => theme.colors.black};
         z-index: 9999;
       }
@@ -98,6 +99,7 @@ const Navbar = () => {
     }
   `;
 
+
   return (
     <Nav>
       <div className={openMenu ? "menuIcon active" : "menuIcon"}>
@@ -106,7 +108,8 @@ const Navbar = () => {
             <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/">
+              to="/"
+            >
               Home
             </NavLink>
           </li>
@@ -114,7 +117,8 @@ const Navbar = () => {
             <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/about">
+              to="/about"
+            >
               About
             </NavLink>
           </li>
@@ -122,7 +126,8 @@ const Navbar = () => {
             <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/services">
+              to="/services"
+            >
               Services
             </NavLink>
           </li>
@@ -130,16 +135,33 @@ const Navbar = () => {
             <NavLink
               className="navbar-link"
               onClick={() => setOpenMenu(false)}
-              to="/contact">
+              to="/contact"
+            >
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink className="navbar-link" to={"/login "}>
+            <NavLink
+              className="navbar-link"
+              to={"/login "}
+              onClick={() => setOpenMenu(false)}
+            >
               LogIn/SignUp
             </NavLink>
           </li>
         </ul>
+        <div className="mobile-navbar-btn">
+          <CgMenu
+            name="menu-outline"
+            className="mobile-nav-icon"
+            onClick={() => setOpenMenu(true)}
+          />
+          <CgMenu
+            name="close-outline"
+            className="close-outline mobile-nav-icon"
+            onClick={() => setOpenMenu(false)}
+          />
+        </div>
       </div>
     </Nav>
   );

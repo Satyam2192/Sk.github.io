@@ -27,8 +27,8 @@ const MainHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   .logo {
-    height: auto;
-    max-width: 10%;
+    height: 60px;
+    width: 60px;
     border-radius:20px;
   }
 `;

@@ -12,6 +12,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import SignUp from "./Login/SignUp";
 import FPassword from "./Login/FPassword";
 import Footer from "./components/Footer";
+import GoToTop from "./components/GoToTop";
 // import styled, { ThemeProvider } from "styled-components";
 
 
@@ -47,6 +48,8 @@ const App = () => {
     // </>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <GoToTop />
+      
       <BrowserRouter>
         <Header />
         <Routes>
