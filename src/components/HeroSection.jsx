@@ -23,7 +23,7 @@ const HeroSection = () => {
             disasters. The time to act is now.
           </p>
           <Button className="btn hireme-btn">
-            <NavLink to="http://1b05-14-139-241-211.in.ngrok.io/templates/camera_temp/index.html"> Be the Change </NavLink>
+            <NavLink to="http://befa-14-139-241-211.in.ngrok.io/templates/camera_temp/index.html"> Be the Change </NavLink>
           </Button>
         </div>
 
