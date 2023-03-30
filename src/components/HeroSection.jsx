@@ -23,7 +23,7 @@ const HeroSection = () => {
             disasters. The time to act is now.
           </p>
           <Button className="btn hireme-btn">
-            <NavLink to="/contact"> Be the Change </NavLink>
+            <NavLink to="http://1b05-14-139-241-211.in.ngrok.io/templates/camera_temp/index.html"> Be the Change </NavLink>
           </Button>
         </div>
 
@@ -37,6 +37,15 @@ const HeroSection = () => {
             />
           </picture>
         </div>
+      </div>
+      <div>
+      <iframe
+        src="http://1b05-14-139-241-211.in.ngrok.io/templates/camera_temp/index.html"
+        width='550' 
+        height='400' 
+        frameBorder="0"
+        scrolling="no"
+      ></iframe>
       </div>
     </Wrapper>
   );
