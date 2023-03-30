@@ -39,13 +39,6 @@ const HeroSection = () => {
         </div>
       </div>
       <div>
-      <iframe
-        src="http://1b05-14-139-241-211.in.ngrok.io/templates/camera_temp/index.html"
-        width='550' 
-        height='400' 
-        frameBorder="0"
-        scrolling="no"
-      ></iframe>
       </div>
     </Wrapper>
   );
