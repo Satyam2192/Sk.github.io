@@ -114,8 +114,31 @@ const Services = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 2rem;
-  background-color: #f2f2f2;
+padding: 2rem;
+background-color: #f2f2f2;
+
+.grid {
+display: grid;
+grid-template-columns: 1fr;
+grid-gap: 2rem;
+}
+
+@media (min-width: 768px) {
+.grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+iframe {
+width: 100%;
+height: 400px;
+}
+
+@media (min-width: 768px) {
+iframe {
+height: 500px;
+}
+}
 `;
 
 const WeatherDataContainer = styled.div`
