@@ -1,44 +1,78 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
-function LogIn() {
+
+const LogIn = () => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputs = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
+  const postData = async (e) => {
+    e.preventDefault();
+
+    const {
+      email,
+      password,
+    } = user;
+
+    fetch("/");
+  };
+
   return (
-
-
     <Wrapper>
       <section>
         <div class="form-box">
           <div class="form-value">
-            <form
-              // action="/myaction.php"
-              // name="myForm"
-              // onsubmit="return validateForm()"
-              // method="post"
-            >
+            <form>
               <h2>Log in</h2>
 
               <div class="inputbox" id="email">
                 <ion-icon name="mail-outline"></ion-icon>
-                <input type="mail" required />
+                <input
+                  value={user.email}
+                  onChange={handleInputs}
+                  type="mail"
+                  name="email"
+                  id="email"
+                  required
+                />
                 <label for="">Email</label>
               </div>
               <div class="inputbox" id="password">
                 <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password" required />
+                <input
+                  name="password"
+                  id="password"
+                  value={user.password}
+                  onChange={handleInputs}
+                  type="password"
+                  required
+                />
                 <label for="">Password</label>
               </div>
               <div class="forget">
                 <label for="">
                   <input type="checkbox" />
-                  Remember Me 
-                  <Link className="forgot-password" to="/FPassword">Forget Password</Link>
+                  Remember Me
+                  <Link className="forgot-password" to="/FPassword">
+                    Forget Password
+                  </Link>
                 </label>
               </div>
-              <button>Log in</button>
+              <button onClick={postData}>Log in</button>
               <div class="register">
                 <p>
-                  Don't have a account 
+                  Don't have a account
                   <Link to="/SignUp"> Register</Link>
                 </p>
               </div>
@@ -48,7 +82,7 @@ function LogIn() {
       </section>
     </Wrapper>
   );
-}
+};
 
 const Wrapper = styled.section`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");

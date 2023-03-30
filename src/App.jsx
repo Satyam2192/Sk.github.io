@@ -23,8 +23,11 @@ const App = () => {
       text: "rgb(24 24 29)",
       white: "#fff",
       black: " #212529",
-      helper: "#8490ff",
-      bg: "rgb(249 249 255)",
+      // helper: "#8490ff",
+      helper: "rgb(60, 179, 113)",
+      // helper: "rgb(60, 179, 113)",
+      bg: "#F5F5DC",
+      // bg: '#D2B48C',
       footer_bg: "#36454F",
       btn: "#3CB371",
       border: "rgba(98, 84, 243, 0.5)",
@@ -62,7 +65,7 @@ const App = () => {
           <Route path="/fpassword" element={<FPassword />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        {/* <Footer /> */}
+
         <Footer />
       </BrowserRouter>
     </ThemeProvider>

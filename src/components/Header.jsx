@@ -20,16 +20,42 @@ const Header = () => {
 };
 
 const MainHeader = styled.header`
-  padding: 0 4.8rem;
+  padding: 0 2rem;
   height: 10rem;
   background-color: ${({ theme }) => theme.colors.bg};
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 0 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 8rem;
+  }
+
   .logo {
-    height: 60px;
-    width: 60px;
-    border-radius:20px;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .logo {
+      height: 4rem;
+      width: 4rem;
+      margin-right: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .logo {
+      height: 5rem;
+      width: 5rem;
+      margin-right: 6rem;
+    }
   }
 `;
 

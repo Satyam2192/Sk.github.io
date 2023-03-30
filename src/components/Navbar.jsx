@@ -1,8 +1,7 @@
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { CgMenu} from "react-icons/cg";
+import { CgMenu } from "react-icons/cg";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -44,16 +43,17 @@ const Navbar = () => {
         display: inline-block;
         z-index: 999;
         border: ${({ theme }) => theme.colors.black};
+        overflow: hidden;
         .mobile-nav-icon {
           font-size: 4.2rem;
+          overflow: hidden;
           color: ${({ theme }) => theme.colors.black};
         }
       }
       /* hide the original nav menu  */
       .navbar-list {
-        width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background-color: #fff;
@@ -65,6 +65,9 @@ const Navbar = () => {
         transform: translateX(100%);
         visibility: hidden;
         opacity: 0;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
         li {
           .navbar-link {
             &:link,
@@ -97,59 +100,87 @@ const Navbar = () => {
         z-index: 999;
       }
     }
+    @media (min-width: ${({ theme }) => theme.media.tablet}) {
+      .navbar-list {
+        gap: 6.4rem;
+      }
+      .mobile-navbar-btn {
+        display: none;
+      }
+      .navbar-list {
+        display: flex !important;
+        justify-content: flex-end;
+        li {
+          .navbar-link {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+    @media (min-width: ${({ theme }) => theme.media.desktop}) {
+      .navbar-list {
+        gap: 8rem;
+      }
+      .navbar-list {
+        li {
+          .navbar-link {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
   `;
-
 
   return (
     <Nav>
       <div className={openMenu ? "menuIcon active" : "menuIcon"}>
-        <ul className="navbar-list">
-          <li>
-            <NavLink
-              className="navbar-link"
-              onClick={() => setOpenMenu(false)}
-              to="/"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="navbar-link"
-              onClick={() => setOpenMenu(false)}
-              to="/about"
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="navbar-link"
-              onClick={() => setOpenMenu(false)}
-              to="/services"
-            >
-              Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="navbar-link"
-              onClick={() => setOpenMenu(false)}
-              to="/contact"
-            >
-              Contact
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="navbar-link"
-              to={"/login "}
-              onClick={() => setOpenMenu(false)}
-            >
-              LogIn/SignUp
-            </NavLink>
-          </li>
-        </ul>
+      <ul className="navbar-list">
+      <li>
+        <NavLink
+          className="navbar-link"
+          onClick={() => setOpenMenu(false)}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navbar-link"
+          onClick={() => setOpenMenu(false)}
+          to="/about"
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navbar-link"
+          onClick={() => setOpenMenu(false)}
+          to="/services"
+        >
+          Services
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navbar-link"
+          onClick={() => setOpenMenu(false)}
+          to="/contact"
+        >
+          Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navbar-link"
+          to={"/login "}
+          onClick={() => setOpenMenu(false)}
+        >
+          LogIn/SignUp
+        </NavLink>
+      </li>
+    </ul>
         <div className="mobile-navbar-btn">
           <CgMenu
             name="menu-outline"

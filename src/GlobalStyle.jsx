@@ -6,6 +6,11 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
+  // font-family: 'Edu NSW ACT Foundation', cursive;
+  // font-family: 'Kalam', cursive;
+  // font-family: 'Source Sans Pro', sans-serif;
+  // font-family: 'Work Sans', sans-serif;
+
  }
 html {
   font-size: 62.5%;
